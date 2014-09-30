@@ -60,8 +60,9 @@ new.mat<- prob.mat*initial
 
 post.prior<-t(apply(new.mat,1,function(x) x/sum(x)))
 
-
-
+initial[list1[[1]] == list2[[1]],] <- post.prior[list1[[1]] == list2[[1]],]
+ 
+new.list<- max.col(initial)
 
 #probability<- mutate((truthtable*0.925)+0.025)
 #test <- truthtable[1:100,]
